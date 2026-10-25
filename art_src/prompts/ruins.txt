@@ -1,0 +1,7 @@
+Landscape 3:2 image. Game asset sheet on a perfectly flat solid magenta background (#FF00FF). Same hand-painted stylized 2.5D game art style and palette as the attached reference screenshot. Warm sunset lighting from the right.
+Ruins of an ancient Silk Road caravanserai seen from the side, as SEPARATE objects with plenty of magenta space between them:
+(1) the biggest object across the top half: a long ruined mud-brick wall with crenellations and three large open arches (magenta must show through the arch openings);
+(2) bottom left: a broken ruined round tower;
+(3) bottom middle: a single standing ruined arch (open, magenta inside);
+(4) bottom right: a low pile of fallen bricks and stones.
+No ground plane, no sky, no cast shadows, no text.

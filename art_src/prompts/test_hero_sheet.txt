@@ -1,0 +1,8 @@
+Landscape 3:2 image. 2D game sprite sheet of ONE character: a young Kazakh batyr (steppe warrior), side view facing RIGHT, full body.
+Short black hair, no helmet, calm determined face. Dark slate lamellar armor with glowing turquoise Kazakh ram-horn ornaments (koshkar muiz) on the chest, shoulder pads, armor skirt and boots; brown leather belt with a gold buckle; dark trousers; dark leather boots. A curved steel saber (kylysh) in his right hand with a faint turquoise glow on the blade; a round dark leather shield with a turquoise ring ornament worn on his back.
+Art style: hand-painted stylized 2.5D game art like the attached reference screenshots — clean dark outline, soft painterly cel shading, rich colors.
+Layout: a strict grid of 4 columns x 3 rows on a perfectly flat solid magenta background (#FF00FF). No ground, no floor shadow, no text, no labels, no UI, no grid lines. Every cell contains the SAME character at the SAME scale, feet on the same baseline, fully inside its cell with margin around.
+Row 1: idle stance, 4 frames of subtle breathing.
+Row 2: running cycle, 4 frames (contact, down, passing, up).
+Row 3: saber attack, 4 frames (wind-up raising the saber, mid-swing, slash forward with a turquoise motion arc, follow-through).
+The character must look identical in every frame: same proportions, same armor, same colors.

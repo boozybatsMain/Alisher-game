@@ -1,0 +1,14 @@
+# кэш Godot — пересоздаётся при открытии проекта
+.godot/
+*.import.tmp
+__pycache__/
+.DS_Store
+
+# эксперименты с бегом: из них в игре используется только 8-кадровый удар
+art_src/test/*
+!art_src/test/hero_attack8.png
+
+# превью: в репозитории только демо приёмов анимации
+preview/*
+!preview/.gdignore
+!preview/fx_demo.html

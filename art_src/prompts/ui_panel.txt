@@ -1,0 +1,1 @@
+Landscape 3:2 image. Game UI asset on a perfectly flat solid magenta background (#FF00FF): one large rectangular menu panel that fills about 90% of the image, with an ornate gold border and Kazakh ram-horn ornaments in the four corners, and a plain dark red-brown felt texture inside (inside completely plain and empty, no text, no decorations in the middle). Front view, symmetric.

@@ -1,0 +1,8 @@
+Landscape 3:2 image. Game asset sheet on a perfectly flat solid magenta background (#FF00FF). Same hand-painted stylized 2.5D game art style as the attached reference, lit by cool violet moonlight from the upper right with a faint warm rim.
+Five SEPARATE objects of an ancient steppe burial ground, side view, all standing on the same baseline, with plenty of magenta space between them:
+(1) a large grassy burial mound (kurgan) with a ring of standing stones at its base;
+(2) a tall stone stele carved with glowing old Turkic runes;
+(3) a row of three small weathered balbal stone idols;
+(4) a horse skull on a wooden pole with faded ribbons (a steppe totem);
+(5) a cracked stone altar with a smoldering violet flame.
+No ground plane, no sky, no cast shadows, no text.

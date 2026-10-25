@@ -1,0 +1,49 @@
+{
+ "frame_w": 376,
+ "frame_h": 274,
+ "anchor_x": 188.0,
+ "anchor_y": 235.26984126984127,
+ "anims": {
+  "walk": {
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "durations": null
+  },
+  "attack": {
+   "frames": 4,
+   "fps": 7,
+   "loop": false,
+   "durations": [
+    1.6,
+    2.2,
+    2.0,
+    1.2
+   ]
+  },
+  "idle": {
+   "frames": 1,
+   "fps": 4,
+   "loop": true,
+   "durations": null
+  },
+  "hurt": {
+   "frames": 1,
+   "fps": 4,
+   "loop": false,
+   "durations": null
+  },
+  "teleport": {
+   "frames": 1,
+   "fps": 4,
+   "loop": false,
+   "durations": null
+  },
+  "death": {
+   "frames": 1,
+   "fps": 4,
+   "loop": false,
+   "durations": null
+  }
+ }
+}

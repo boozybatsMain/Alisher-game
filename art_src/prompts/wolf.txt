@@ -1,0 +1,5 @@
+Landscape 3:2 image. 2D game sprite sheet of ONE enemy: a corrupted steppe spirit wolf — a large lean grey-black wolf with glowing ember-orange eyes, ragged smoky fur that trails into dark wisps at the tail and paws, a bony spine ridge, faint orange runic marks on its shoulder. Side view facing RIGHT, full body.
+Layout: a strict grid of 4 columns x 3 rows on a perfectly flat solid magenta background (#FF00FF). No ground, no floor shadow, no text, no labels, no UI, no grid lines. Every cell contains the same character at the same scale, fully inside its cell with generous margin; feet on the same baseline within a row. Art style: hand-painted stylized 2.5D game art like the attached references — clean dark outline, soft painterly cel shading, rich colors, warm sunset light from the right.
+Row 1: fast gallop run cycle, 4 frames.
+Row 2: pounce attack, 4 frames (crouching low ready to leap, eyes glowing; leaping forward through the air with jaws wide open; biting forward with an orange motion arc; landing on all fours).
+Row 3: 4 frames (snarling idle stance; recoiling from a hit; stunned and dizzy with lowered head; collapsing and dissolving into dark smoke).

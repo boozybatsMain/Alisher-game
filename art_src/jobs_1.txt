@@ -1,0 +1,18 @@
+hero/hero_B.png | hero_B.txt | hero/hero_A.png
+hero/hero_C.png | hero_C.txt | hero/hero_A.png
+enemies/zhest_A.png | zhest_A.txt | ref/steppe_ref.png
+enemies/balbal.png | balbal.txt | ref/steppe_ref.png
+enemies/spirit.png | spirit.txt | ref/steppe_ref.png
+bg/yurt_bg.png | yurt_bg.txt | ref/yurt_ref.png
+bg/sky.png | sky.txt | ref/steppe_ref.png
+bg/ruins.png | ruins.txt | ref/steppe_ref.png
+bg/stones.png | stones.txt | ref/steppe_ref.png
+bg/ground.png | ground.txt | ref/steppe_ref.png
+bg/grass.png | grass.txt | ref/steppe_ref.png
+fx/fire.png | fire.txt |
+ui/hud.png | ui_hud.txt | ref/yurt_ref.png
+ui/icons.png | ui_icons.txt | ref/yurt_ref.png
+ui/gods.png | ui_gods.txt |
+ui/panel.png | ui_panel.txt |
+---
+enemies/zhest_B.png | zhest_B.txt | enemies/zhest_A.png

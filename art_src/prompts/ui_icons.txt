@@ -1,0 +1,5 @@
+Landscape 3:2 image. Game UI icon sheet on a perfectly flat solid magenta background (#FF00FF): a grid of 4 columns x 3 rows of icons, each icon centered in its cell with magenta margin. Painterly, glossy, ornate gold rims, Kazakh ornament details.
+Row 1 — sky god Tengri (blue-white, lightning, sky): diamond-shaped icon with a curved saber struck by lightning; diamond icon with a fast dash wind streak and lightning; diamond icon with a round shield and lightning; and in column 4 a golden asyk (sheep knucklebone game piece) icon.
+Row 2 — goddess Umai (green and gold, bird wings, leaves, life): diamond icon with a saber and green healing leaves; diamond icon with a dash and bird wings; diamond icon with a shield and golden wings; and in column 4 a triangular Kazakh tumar amulet icon.
+Row 3 — fire mother Ot-Ana (orange-red flame): diamond icon with a flaming saber; diamond icon with a fiery dash trail; diamond icon with a burning shield; and in column 4 a heart-shaped red health icon with a gold rim.
+No text, no letters.

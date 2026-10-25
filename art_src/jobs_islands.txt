@@ -1,0 +1,1 @@
+bg/islands.png | islands.txt | ref/steppe_ref.png,bg/ruins.png

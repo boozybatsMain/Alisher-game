@@ -1,0 +1,5 @@
+Landscape 3:2 image. 2D game sprite sheet of ONE boss enemy: Zhestyrnak — a terrifying witch from Kazakh folklore with long copper claws. A tall gaunt woman, about a head taller than a man, pale grey-green skin, glowing amber eyes, very long flowing black hair, a dark crimson robe with gold ornament trim, copper jewelry, extremely long sharp copper claws on both hands. Side view facing RIGHT, full body.
+Layout: a strict grid of 4 columns x 3 rows on a perfectly flat solid magenta background (#FF00FF). No ground, no floor shadow, no text, no labels, no UI, no grid lines. Every cell contains the same character at the same scale, fully inside its cell with generous margin; feet on the same baseline within a row. Art style: hand-painted stylized 2.5D game art like the reference — clean dark outline, soft painterly cel shading, rich colors.
+Row 1: idle, 4 frames (hair and robe swaying, claws twitching).
+Row 2: walking forward, 4 frames.
+Row 3: claw attack, 4 frames (raising the claws high; slashing down with a copper-red motion arc; second slash with the other hand; recovery).

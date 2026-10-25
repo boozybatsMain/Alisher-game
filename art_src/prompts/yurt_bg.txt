@@ -1,0 +1,5 @@
+Landscape 3:2 image. A background for a 2D side-scroller game: the interior of a Kazakh yurt (Ak Orda) seen from the side, like a stage. Same hand-painted stylized 2.5D game art style and palette as the attached reference screenshot.
+Dark wooden dome with red-painted roof poles (uyk) converging upward, lattice walls (kerege), large hanging felt carpets (tus kiiz) with traditional Kazakh ornaments, an ornate patterned rug (syrmak) on the floor.
+On the far left edge: a carved wooden yurt door painted red-orange with ornaments. Left of center: a carved wooden chest with gold fittings standing on the floor. Exact horizontal center: a hearth — a ring of stones with crossed logs and only softly glowing embers (no tall flame, no smoke). Right side: a dombra leaning against the wall and a stack of folded colorful cushions.
+Warm dim firelight, cozy and mystical. NO characters, NO people, NO UI, NO text, NO watermark.
+The floor must be a clear, flat, walkable band across the bottom 22% of the image. Keep important content inside the central horizontal band so the image can be cropped to 16:9.

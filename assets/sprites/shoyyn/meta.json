@@ -1,0 +1,80 @@
+{
+ "frame_w": 692,
+ "frame_h": 582,
+ "anchor_x": 346.0,
+ "anchor_y": 502.0645854174303,
+ "anims": {
+  "idle": {
+   "frames": 4,
+   "fps": 5,
+   "loop": true,
+   "durations": null
+  },
+  "walk": {
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "durations": null
+  },
+  "smash": {
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "durations": [
+    2.2,
+    2.2,
+    0.6,
+    2.6
+   ]
+  },
+  "sweep": {
+   "frames": 4,
+   "fps": 9,
+   "loop": false,
+   "durations": [
+    2.4,
+    0.6,
+    1.2,
+    1.8
+   ]
+  },
+  "stomp": {
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "durations": [
+    2.2,
+    1.6,
+    1.0,
+    2.4
+   ]
+  },
+  "roar": {
+   "frames": 1,
+   "fps": 2,
+   "loop": false,
+   "durations": null
+  },
+  "hurt": {
+   "frames": 1,
+   "fps": 4,
+   "loop": false,
+   "durations": null
+  },
+  "stun": {
+   "frames": 1,
+   "fps": 4,
+   "loop": true,
+   "durations": null
+  },
+  "death": {
+   "frames": 2,
+   "fps": 2,
+   "loop": false,
+   "durations": [
+    1,
+    3
+   ]
+  }
+ }
+}

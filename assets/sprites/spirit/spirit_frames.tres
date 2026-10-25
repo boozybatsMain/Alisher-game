@@ -1,0 +1,121 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/spirit/float.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/spirit/attack.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/spirit/hurt.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/spirit/stun.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/spirit/death.png" id="5"]
+
+[sub_resource type="AtlasTexture" id="at_1"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_2"]
+atlas = ExtResource("1")
+region = Rect2(394, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_3"]
+atlas = ExtResource("1")
+region = Rect2(788, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_4"]
+atlas = ExtResource("1")
+region = Rect2(1182, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_5"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_6"]
+atlas = ExtResource("2")
+region = Rect2(394, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_7"]
+atlas = ExtResource("2")
+region = Rect2(788, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_8"]
+atlas = ExtResource("2")
+region = Rect2(1182, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_9"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_10"]
+atlas = ExtResource("4")
+region = Rect2(0, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_11"]
+atlas = ExtResource("5")
+region = Rect2(0, 0, 394, 242)
+
+[sub_resource type="AtlasTexture" id="at_12"]
+atlas = ExtResource("5")
+region = Rect2(394, 0, 394, 242)
+
+[resource]
+metadata/anchor = Vector2(197.0, 221.8799249530957)
+metadata/frame_size = Vector2(394, 242)
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_4")
+}],
+"loop": true,
+"name": &"float",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.8,
+"texture": SubResource("at_5")
+}, {
+"duration": 1.6,
+"texture": SubResource("at_6")
+}, {
+"duration": 0.8,
+"texture": SubResource("at_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_8")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_9")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_10")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_11")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_12")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}]

@@ -1,0 +1,2 @@
+test/hero_run8.png | hero_run8.txt | hero/hero_A.png
+test/hero_attack8.png | hero_attack8.txt | hero/hero_A.png

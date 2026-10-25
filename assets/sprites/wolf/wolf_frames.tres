@@ -1,0 +1,127 @@
+[gd_resource type="SpriteFrames" load_steps=19 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/wolf/run.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/wolf/attack.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/wolf/idle.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/wolf/hurt.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/wolf/stun.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/wolf/death.png" id="6"]
+
+[sub_resource type="AtlasTexture" id="at_1"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_2"]
+atlas = ExtResource("1")
+region = Rect2(288, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_3"]
+atlas = ExtResource("1")
+region = Rect2(576, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_4"]
+atlas = ExtResource("1")
+region = Rect2(864, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_5"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_6"]
+atlas = ExtResource("2")
+region = Rect2(288, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_7"]
+atlas = ExtResource("2")
+region = Rect2(576, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_8"]
+atlas = ExtResource("2")
+region = Rect2(864, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_9"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_10"]
+atlas = ExtResource("4")
+region = Rect2(0, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_11"]
+atlas = ExtResource("5")
+region = Rect2(0, 0, 288, 186)
+
+[sub_resource type="AtlasTexture" id="at_12"]
+atlas = ExtResource("6")
+region = Rect2(0, 0, 288, 186)
+
+[resource]
+metadata/anchor = Vector2(144.0, 177.3119266055046)
+metadata/frame_size = Vector2(288, 186)
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_4")
+}],
+"loop": true,
+"name": &"run",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("at_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("at_6")
+}, {
+"duration": 0.7,
+"texture": SubResource("at_7")
+}, {
+"duration": 1.3,
+"texture": SubResource("at_8")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_9")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_10")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_11")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("at_12")
+}],
+"loop": false,
+"name": &"death",
+"speed": 4.0
+}]

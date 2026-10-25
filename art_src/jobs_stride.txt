@@ -1,0 +1,2 @@
+test/hero_stride8.png | hero_stride8.txt | hero/hero_A.png,test/pose_stride8.png
+test/hero_stride8_b.png | hero_stride8.txt | hero/hero_A.png,test/pose_stride8.png

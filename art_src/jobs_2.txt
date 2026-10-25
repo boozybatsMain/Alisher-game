@@ -1,0 +1,8 @@
+enemies/wolf.png | wolf.txt | ref/steppe_ref.png,enemies/balbal.png
+enemies/archer.png | archer.txt | ref/steppe_ref.png,enemies/balbal.png
+enemies/shaman.png | shaman.txt | ref/steppe_ref.png,enemies/balbal.png
+enemies/boss2_A.png | boss2_A.txt | ref/steppe_ref.png,enemies/balbal.png
+bg/sky_night.png | sky_night.txt | bg/sky.png
+bg/kurgan_props.png | kurgan_props.txt | bg/stones.png
+---
+enemies/boss2_B.png | boss2_B.txt | enemies/boss2_A.png
