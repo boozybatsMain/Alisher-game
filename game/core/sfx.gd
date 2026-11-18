@@ -63,3 +63,14 @@ func music(name: String, fade := 1.0) -> void:
 			_music.volume_db = -40.0
 			_music.play())
 	tw.tween_property(_music, "volume_db", -9.0, fade)
+
+
+## При выходе останавливаем звуки и отпускаем потоки — иначе Godot пишет «resources still in use at exit».
+func _exit_tree() -> void:
+	for p in _players:
+		p.stop()
+		p.stream = null
+	if _music:
+		_music.stop()
+		_music.stream = null
+	_cache.clear()

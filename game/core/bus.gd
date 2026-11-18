@@ -25,6 +25,6 @@ signal boons_changed
 signal weapon_changed(weapon_id: String, aspect: int)
 signal room_cleared                                ## последняя волна комнаты уничтожена
 signal room_entered(room: Dictionary)
-signal wave_started(index: int, total: int)
+signal wave_started(index: int, total: int)       ## index — номер волны с 1
 signal toast(text: String, color: Color)           ## короткое уведомление в центре экрана
 signal dialogue_requested(lines: Array)            ## [{speaker, text}] — показать диалог

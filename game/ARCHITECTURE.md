@@ -2,7 +2,8 @@
 
 Godot 4.7, Forward+, 3D-мир + 2D-персонажи-билборды (AnimatedSprite3D, готовые SpriteFrames из `assets/sprites/*`).
 Это и есть «2.5D-компакт»: геометрия арен — 3D-блоки (MeshInstance3D + StaticBody3D, процедурно), задники — 2D-картинки
-степи из `assets/bg/*` на дальних плоскостях; персонажи — спрайты с `billboard = BILLBOARD_FIXED_Y`, flip_h по направлению.
+степи из `assets/bg/*`: небо, степь и хребты гор (`mountains_far_*.png`, `tools/make_mountains.py`) — 2D-фон окружения
+(`game/rooms/arena_backdrop.gd`, Environment.BG_CANVAS, параллакс по экранному сдвигу арены), курганы/руины — на дальних плоскостях; персонажи — спрайты с `billboard = BILLBOARD_FIXED_Y`, flip_h по направлению.
 
 Единицы: 1 = 1 метр. Ось Y — вверх. Герой ~1.8 м. Арена ~ 30×24 м, ярусы на высоте 0 / 3 / 6 м.
 Камера: ортогональная или перспективная с FOV ~30, наклон 40° вниз, смотрит с юга-востока (как Hades),
@@ -15,7 +16,7 @@ Godot 4.7, Forward+, 3D-мир + 2D-персонажи-билборды (Animate
 | `game/core/` | автозагрузки Bus / Meta / Run / Sfx, Hit, Combat | ядро (не менять API, только добавлять) |
 | `game/player/` | герой, акробатика, камера | A |
 | `game/ui/` | HUD, пауза, экран смерти, числа урона, диалоговое окно, общий UI-кит | A |
-| `game/weapons/` | 5 оружий × 3 аспекта | B |
+| `game/weapons/` | 5 оружий × 4 аспекта (0 — базовый, 1–3 за Пепел: `Meta.ASPECT_COSTS`) | B |
 | `game/boons/` | Дары 6 духов, BoonManager, окно выбора 1 из 3, тотем | B |
 | `game/enemies/` | враги, элитки с бронёй, телеграфы, боссы, снаряды, фабрика | C |
 | `game/rooms/` | арены с ярусами, двери с наградами, типы комнат, волны, торговец, колодец, «Спор Духов», «Печать Номада» | D |
@@ -28,6 +29,8 @@ Godot 4.7, Forward+, 3D-мир + 2D-персонажи-билборды (Animate
 
 - **Bus** (`core/bus.gd`) — все сигналы. Посмотрите список, прежде чем вводить свой.
 - **Meta** (`core/meta.gd`) — постоянный прогресс: `ash`, `chest[...]`, `weapons_unlocked`, `aspects_unlocked`, `equipped_weapon/aspect`, `kuis_unlocked`, `kui_prepared`, `story`, `stats`, `last_run`.
+  Путь сейва — `Meta.save_path`: `user://tamyr_save.json`, а для сцен из `res://tools/` (тесты, check, smoke) или с аргументом `-- test_save` —
+  `user://tamyr_test_save.json` (сейв игрока тесты не трогают; `-- real_save` — принудительно настоящий).
 - **Run** (`core/run.gd`) — текущий забег: `hp`, `dirhams`, `weapon`, `aspect`, `kui`, `depth`, `biome`, `current_room`, `revives_left`,
   `boons` (BoonManager), `planner` (RoomPlanner). Функции: `stat(key)`, `modify_outgoing(hit, target)`, `modify_incoming(amount, source)`,
   `heal`, `set_hp`, `add_dirhams`, `spend_dirhams`, `add_ash`, `start_run`, `enter_room(room)`, `door_choices()`, `on_player_death(killer) -> bool`,
@@ -73,6 +76,10 @@ Godot 4.7, Forward+, 3D-мир + 2D-персонажи-билборды (Animate
 - `func tick(delta)` — вызывается героем каждый кадр; `func is_busy() -> bool` (герой не может рывок/прыжок? — рывок прерывает атаку всегда)
 - `func cancel()` — прервать атаку (рывок). `func move_mult() -> float` — множитель скорости бега во время атаки.
 - `func air_special()` — особая атака в воздухе сразу после отскока от стены (удар сверху вниз, ×2 по броне) — по умолчанию в базовом классе.
+- Комбинации с движением: обычная атака наследника начинается с `if try_move_attack(): return` — сразу после рывка (0.3 с) вызывается
+  `dash_attack() -> bool`, в воздухе — `air_attack() -> bool` (true — удар выполнен). Меч: выпад / рубящий удар сверху; Копьё: длинный выпад /
+  выпад-нырок вниз; Щит: таран (wall_x2) / удар щитом по площади при приземлении; Лук: мгновенный выстрел / залп вниз с зависанием;
+  Перчатки: таранный удар / воздушная серия. Хиты помечены тегами `dash_strike` и `air_attack`.
 - Фабрика: `WeaponBase.create(id: String) -> WeaponBase` (`game/weapons/weapon_factory.gd`, `static func create(id, aspect)`).
 - Метаданные для оружейной: `game/weapons/weapon_data.gd`: `const WEAPONS := {id: {title, desc, range, tempo, aspects: [{title, desc, color}]}}`.
 
@@ -95,13 +102,17 @@ Godot 4.7, Forward+, 3D-мир + 2D-персонажи-билборды (Animate
 **Комнаты** (`game/rooms/`):
 - `room.tscn` / `room.gd` — читает `Run.current_room`, строит арену (`arena_builder.gd`), спавнит героя и HUD, запускает волны, после зачистки — награда и 2 двери.
 - `room_planner.gd` (`class_name RoomPlanner`): `first_room() -> Dictionary`, `make_choices(current_room, rng) -> Array` (2 двери).
-- Формат комнаты: `{"type": "combat"|"elite"|"boss"|"merchant"|"duel"|"rest", "reward": "boon"|"ash"|"gold"|"merchant"|"upgrade"|"heal"|"kui",
-  "god": String, "god2": String (для duel), "depth": int, "biome": int, "seed": int, "seal": bool (Печать Номада после зачистки)}`.
+- Формат комнаты: `{"type": "combat"|"elite"|"boss"|"merchant"|"duel"|"rest"|"secret", "reward": "boon"|"ash"|"gold"|"merchant"|"upgrade"|"heal"|"kui",
+  "god": String, "god2": String (для duel), "depth": int, "biome": int, "seed": int, "seal": bool (Печать Номада после зачистки),
+  "secret": bool (в боевой комнате есть треснувшая плита — тайный ход)}`.
+- Тайный ход: `arena.add_secret_wall(rng)` ставит `ArenaBreakable` kind `"secret_wall"`; после разрушения room.gd ставит дверь в
+  `RoomPlanner.secret_room(room, rng)` — комнату `"secret"` той же глубины (раскладка `secret_trial`, акробатическая полоса без врагов),
+  награда — «Забытая нота» (`kui`). Видимых дверей с нотой нет.
 - Двери: `door.gd` — Area3D, символ награды над аркой (Sprite3D/Label3D иконка), вход → `Run.enter_room(room_dict)`.
 - Конец забега: финальный босс биома 2 → `Run.end_run(false, "", boss_id)` (победа) — в Хабе пойдёт сюжетный диалог.
 
 **Хаб** (`game/hub/`): `hub.tscn` — Стойбище Предков: оружейный шатёр (5 стоек + манекен с DPS), шатёр героя с Сандыком, костёр с домброй, выход на тропу (→ `Run.start_run()`).
-Сюжет — `story.gd` (диалоги по `Meta.story`, `Meta.last_run`, `Run.hub_reason`), показ через `Bus.dialogue_requested.emit(lines)` — окно рисует `game/ui/dialogue_box.gd` (A).
+Сюжет — `story.gd` (диалоги по `Meta.story`, `Meta.last_run` (в т.ч. `bosses_killed` — сцены «после босса» `boss_zhest_seen`/`boss_shoyyn_seen` при возвращении после смерти), `Run.hub_reason`), показ через `Bus.dialogue_requested.emit(lines)` — окно рисует `game/ui/dialogue_box.gd` (A).
 Интерактивные объекты — `game/hub/interactable.gd` (Area3D, `prompt: String`, сигнал `activated(player)`; герой ищет ближайший в группе `"interactable"` и по `interact` вызывает `activate(player)`).
 Этот же interactable используют комнаты (двери, тотемы, торговец, колодец, сундук-печать).
 

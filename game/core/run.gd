@@ -20,6 +20,7 @@ const KUIS := {
 }
 
 var active := false              ## забег идёт (false — в Хабе)
+var victory_pending := false     ## финальный босс повержен, ждём перехода в Хаб: герой неуязвим, смерть не засчитывается
 var depth := 0                   ## номер комнаты в забеге (0 — первая)
 var biome := 0                   ## 0 — Осквернённая степь, 1 — Корни Байтерека, 2 — Чертог Ерлика
 var hp := 100.0
@@ -33,6 +34,7 @@ var kui := ""                    ## активный Музыкальный за
 var current_room: Dictionary = {}
 var rooms_cleared := 0
 var boss_kills := 0
+var bosses_killed: Array = []    ## id боссов, убитых в этом забеге (→ Meta.last_run.bosses_killed, сцены в Хабе)
 var rng := RandomNumberGenerator.new()
 var boons: Node = null           ## BoonManager (game/boons/boon_manager.gd)
 var planner = null               ## RoomPlanner (game/rooms/room_planner.gd)
@@ -143,6 +145,7 @@ func heal(n: float) -> void:
 # ================================================================ поток забега
 func start_run() -> void:
 	active = true
+	victory_pending = false
 	depth = 0
 	biome = 0
 	dirhams = 0
@@ -150,6 +153,7 @@ func start_run() -> void:
 	kills = 0
 	rooms_cleared = 0
 	boss_kills = 0
+	bosses_killed = []
 	weapon = Meta.equipped_weapon
 	aspect = Meta.equipped_aspect
 	kui = Meta.kui_prepared
@@ -186,6 +190,10 @@ func register_kill(enemy: Node) -> void:
 
 ## Герой погиб. Возвращает true, если сработала Клятва Жизни (воскрешение), иначе заканчивает забег.
 func on_player_death(killer := "") -> bool:
+	if victory_pending:
+		# победа уже засчитана — не превращаем её в смерть
+		set_hp(maxf(hp, 1.0))
+		return true
 	if revives_left > 0:
 		revives_left -= 1
 		set_hp(max_hp() * 0.4)
@@ -196,8 +204,11 @@ func on_player_death(killer := "") -> bool:
 
 
 func end_run(died: bool, killer := "", boss := "") -> void:
+	if not active:
+		return   # повторный вызов (смерть в окне победы, двойной таймер) — забег уже завершён
+	victory_pending = false
 	Meta.last_run = {"died": died, "depth": depth, "biome": biome, "killer": killer, "boss": boss,
-		"kills": kills, "ash": ash_run, "dirhams": dirhams}
+		"bosses_killed": bosses_killed.duplicate(), "kills": kills, "ash": ash_run, "dirhams": dirhams}
 	if died:
 		Meta.stats["deaths"] += 1
 	else:
@@ -215,6 +226,7 @@ func end_run(died: bool, killer := "", boss := "") -> void:
 
 func goto_hub() -> void:
 	active = false
+	victory_pending = false
 	_change_scene(HUB_SCENE)
 
 

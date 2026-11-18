@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/boons/spirit_totem.gd" id="1_totem"]
+
+[sub_resource type="SphereShape3D" id="Sph_1"]
+radius = 1.8
+
+[node name="SpiritTotem" type="Area3D"]
+script = ExtResource("1_totem")
+prompt = "E — принять дар"
+radius = 1.8
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("Sph_1")
